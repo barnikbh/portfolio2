@@ -1,0 +1,21 @@
+---
+title: "Building Voice Gateway with VoIP and WebRTC"
+publishedAt: "2025-02-19"
+summary: "Voice Gateway"
+---
+
+![Image](/blog-1.jpeg)
+
+As a PM, one of the most fascinating challenges I've tackled was overhauling our telephony voice agent system. Initially, we leaned on IBM Watson's Voice Gateway, hoping to leverage its orchestrator advantage. Unfortunately, the reality fell short of expectations. Latency clocked in at a sluggish six-plus seconds per interaction, model selection within WatsonX proved a nightmare, and on-prem deployment was off the table. 
+
+Frankly, the results were underwhelming.
+
+Faced with these hurdles, my team and I embraced a first-principles approach. We got scrappy, rolled up our sleeves, and, thanks to the brilliance of my engineering partners Khushil Khatri, Snehal Agrawal, and Smeet Agrawal, we built something truly special.
+
+Instead of relying on third-party gateways, we developed our in-house orchestrator and a custom Voice Gateway. Crucially, we designed it for scalability, ensuring it could seamlessly integrate with any dialer. This involved deep diving into the world of WebRTC and VoIP. 
+
+We leveraged WebRTC's real-time communication capabilities for efficient voice transmission, and VoIP protocols to handle the complexities of call management and routing.
+
+With our custom-built solution in hand, we partnered with excellent dialer providers like SAN Softwares Pvt Ltd and Plivo. These strategic partnerships allowed for a rapid and smooth go-to-market strategy. 
+
+And to top it all, the new architecture wasn't just functional; it was built for rapid scaling, quickly achieving enterprise-grade readiness. By taking control of the core voice technology, we unlocked significant improvements in performance, flexibility, and scalability, ultimately delivering a superior AI voice agent experience.

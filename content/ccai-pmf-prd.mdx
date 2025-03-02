@@ -1,0 +1,269 @@
+---
+title: "Contact Center AI Product Market Fit"
+publishedAt: "2023-10-02"
+summary: "CCAI PMF"
+---
+
+![Image](/fundamento.jpeg)
+---
+
+# 1 Fundamento’s business objectives
+
+The company's objective is to drive `high adoption` of its CCaaS platform by enterprise contact centers with a strong focus on retention and acquisition. 
+
+#### Note 💡
+> Need to establish impact definitions to justify ROI. Impact criteria should include existing users, sales pipeline and estimated value add (quantitative, qualitative)
+
+
+## 1.1 Product objectives
+
+The business objectives can be achieved by: 
+
+- Recognising areas of improvement that have a significant impact on our customer's success metrics such as:
+    - AHT - average handle time
+    - MTTR - mean time to resolve (all support tickets aren’t resolved in a single call)
+    - CSAT - customer satisfaction score
+    - Error Rate - the number of calls where the Agent made an error
+- Making sure that these improvements are easy to adopt, which can be further measured through `Engagement` metrics
+
+## 1.2 Product users
+
+- CX-Head
+- CX-Supervisors
+- CX-Agents
+- `End customers`
+
+> 💡 End customers are indirect users of Yara
+
+## 1.3 Business value assumptions
+
+Addressing customers problems
+
+- Will have some monitory value-added, either through account retention, acquisition or engagement
+- Will have a positive impact on the product’s net offering with respect to competitors, boosting sales and retention
+
+# 2 User research
+
+![Image](/prd-4-1.png)
+
+Use story map for CX team
+
+## 2.1 CX-Head
+
+- She has access to recorded conversations of Agents, along with call metrics such as AHT, MTTR and CSAT
+- She can only listen in on 5% of the calls, and would ideally want to reduce that even further while reducing the error rate in calls
+- She gives direct feedback to a CX-Agent, and the feedback doesn’t necessarily get transmitted to all CX-Agents, leading to other CX-Agents making the same mistakes
+- She wants to cut back costs and improve the team’s AHT, MTTR, Error Rate and CSAT without adding new Agents
+- She needs the team to be more efficient such that it is able to handle more number of calls
+
+## 2.2 CX-Supervisor
+
+- Supervisors are experienced Agents who have some of the lowest AHT and Error Rates
+- He loses time supervising and training new Agents which he could otherwise spend attending customer calls
+
+## 2.3 CX-Agents
+
+- New agents rely on Supervisors for training
+- Agents can read transcripts of their own conversations
+- Agents do not have access to the transcripts of other Agents, which they can potentially learn from
+- Agents get carried away in conversations and deviate from an allotted script
+- Agents sometimes do not get all the necessary details from a customer call, leading to an incorrect outcome
+- Experienced Agents lose time answering trivial customer queries that can otherwise be found through online resources such as a knowledge base
+
+> 💡 Over time, CX-Agents often develop specialised expertise, where some agents are better at handling a particular type of query, which they can handle with greater efficiency than others
+
+## 2.4 End customers
+
+- End customers do not like to wait before an Agent picks up their call
+- They want a resolution as quickly as possible
+- End customers sometimes have complex cases that require follow-up calls, and want the Agents to be proactive about the follow-ups
+
+> 💡 Connecting with a new Agent on a follow-up call regarding the same issue often means that the end customer needs to re-explain their concern all over again. Customers also feel a sense of familiarity when they talk to the same person a second time. [Strong familiarity leads to high CSAT](https://cxl.com/blog/science-of-familiarity/).
+
+## 2.4 Problem Summary
+
+- CX-Head performs QA on random calls, and she would ideally want to have the largest possible impact during the QA process while reducing the coverage
+- Feedback is currently agent-specific, but can potentially be a learning moment for the entire team
+- More number of Agents are required to tackle the growing scale
+- Training Agents is a challenge and expensive for the team
+- Agents partake in trivial conversations leading to poor utilisation of their time
+- Call allocation is random, leading to poor utilisation of specific knowledge among Agents
+- Agents have difficulty completing the checklist when solving customer problems
+- Longer calls lead to longer wait times for customers, and less number of calls handled by Agents
+
+## 2.5 Opportunities
+
+- QA Analytics Dashboard: The specialised dashboard can help CX-Head and Supervisors to find and QA the most impactful calls with the highest AHT and lowest CSAT scores to QA and provide feedback on
+- Transcript Huddle: Important learning moments can be shared across the organisation, containing the call transcript and feedback, which the entire team can learn from
+- Yara Training Assistant: Yara’s LLM can be trained to put Agents through a training program designed from the transcripts of real conversations between Agents and Customers
+- Category Wizard: Agents with low AHT and high CSAT for handling queries for specific business categories can be identified and marked as specialised experts, leading to more effective utilisation of resources
+- Yara Voice Assistant: Incoming calls can be initially filtered with the help of an AI assistant, that can answer common queries, and filter advanced queries to be handled by Agents, leading to more effective utilisation of resources
+- Agent Routing: Effective call routing can lead to better utilisation of resources
+- Shadow Alert: The LLM can be trained to detect from the Agent’s conversation if he misses to clarify any item from the checklist and highlight it for the Agent as a reminder during the conversation
+- Call Summary: A call summary feature can help Agents with solving queries of returning callers.
+
+![Image](/prd-4-2.png)
+
+# 3 Roadmap
+
+## 3.1 Metrics Map
+
+While `AHT`, `MTTR` and `CSAT` are primary metrics, the following are some other metrics that can be used to track specific interactions within the CX team:
+
+- QA Turnover time - time spent in the QA process
+- Error Rate - Number of instances where the CX-Agent makes an error
+- Total Engaged calls - number of calls answered by agents
+- Average wait time - age time for which a customer needs to wait before their call is answered
+
+![Image](/prd-4-3.png)
+
+> 💡 Metrics such as QA Turnover time can be further sub-classified into time spent listening to conversations, time spent providing feedback, time spent in handling escalations, etc. However, we will consider them for micro-classification of user problems while feature planning.
+
+
+## 3.2 Prioritisation
+
+![Image](/prd-4-4.png)
+
+> 💡 **Category Wizard, Yara Voice Assistant and Agent Routing** are most impactful, and in line with the goals of the CX-Head. It will help optimise the utilisation of the current CX workforce, adding efficiency within the team.
+
+
+---
+
+# 4 Product requirements
+
+## 4.1 User experience
+
+### 4.1.1 Category Wizard & Agent Routing
+
+- `Associated categories` and `tags` are already defined while training QnAs on Yara (for example finance, flights, and guest experience)
+- A rating system is maintained for each Agent profile, and as they attend more calls from a particular `category` or `tag`, their rating in that category changes according to their execution (increase or decrease)
+
+![Image](/prd-4-5.png)
+
+Agent profile card
+
+- When an income call for a particular category needs to be routed, they are routed to the available agent with the highest score for that particular `category` or `tag`
+
+> 🚨 This can lead to Agents with low overall ratings not being routed with any calls.
+> There should be a way for Agents to increase their rating by completing training programs through Yara.
+
+
+- Rating systems can be tiered: for example, 1-star, 2-star and 3-star, leading to gamification and higher engagement
+- Agents are notified through Email when they earn a Star in a category
+
+### 4.1.2 Yara Voice Assistant & Agent Routing
+
+- The VA intercepts call through the IVR integration and engage with customers over voice
+    - The journey begins with a quick introduction followed by a question (customisable)
+    - The VA can be integrated with a CRM, and communication can be personalised for details unique to the caller, such as name, upcoming trips, pending actions etc
+- The VA categorises the questions and responds according to `customisable decision blocks`
+
+![Image](/prd-4-6.png)
+
+Example VA flow
+
+## 4.2 Technical requirements
+
+### 4.2.1 Category Wizard & Agent Routing
+
+Architecture:
+
+- A property called `category_rating` is defined for the Agent profile
+
+```json
+{
+"name": "John Doe",
+"employee_id": 12345,
+"category_rating": [
+	{
+		"finance": 0.5,
+		"flights": 0.5,
+		"guest_experience": 0.5
+	}]
+}
+```
+
+- All agents begin with a score of 0 for each category, and as they make progress in that category, their score is incremented
+- The `category_rating` can be calculated as a function of the impact metrics - AHT, CSAT, Error Rate - for their calls in those categories
+- Increment `category_rating` for completing training exercises
+
+```python
+# for queries answered in the category (example finance)
+# if (agent AHT is <= the Mean AHT of the team) && (agent CSAT is >= the Mean CSAT score of top 10% score) && (error rate = 0)
+# increment category_rating for finance
+```
+
+Front end:
+
+- On the front end, stars can be awarded based on the following tiers:
+    - 1-star: 0.1 to 0.5 (Agents should have some about of training before they are assigned calls in a category)
+    - 2-star: 0.51 to 0.8
+    - 3-star: 0.81 and above
+- Email integration for Agent notification
+
+Routing Logic:
+
+- When an incoming call is recognised for a particular `associated category`, the call is assigned to a random agent from the highest available tier (for example, if all 3-star Agents are unavailable, the call is assigned to an Agent with a 2-star rating)
+
+![Image](/prd-4-7.png)
+
+Call routing logic
+
+### 4.2.2 Yara Voice Assistant
+
+API Research:
+
+- Integrate with speech-to-text and text-to-speech APIs (https://cloud.google.com/speech-to-text/docs)
+
+Architecture:
+
+![Image](/prd-4-8.png)
+
+> 🚨 Need a better understanding of Yara’s backend logic blocks to make further technical assumptions for this feature
+
+
+## 4.3 Risks
+
+### 4.3.1 Category Wizard & Agent Routing
+
+![Image](/prd-4-9.png)
+
+### 4.3.2 Yara Voice Assistant
+
+![Image](/prd-4-10.png)
+
+# 5 Go-to-market
+
+## 5.1 Customer Communication
+
+> 📢 With the `Category Wizard` teams can now measure an Agent’s knowledge and expertise for a business category. As Agents up-skill themselves and maintain persistent quality on calls, they are rewarded with stars for that business area. This will allow teams and Yara to identify these specialised Agents for more effective routing, leading to shorter calls, more effective resolution and low error rates for business-critical areas such as finance and customer experience.
+
+
+> 📢 The `Yara Voice Assistant` can now answer customer calls immediately and answer their questions. It has a seamless Agent handover feature that routes business-critical calls to an Agent immediately. This would result in lower wait time for most callers, and better utilisation of the CX workforce.
+
+
+## 5.2 Launch Strategy
+
+- Category Wizard - This can be launched as an add-on to the existing `associated categories` and `tag` features available while training Yara. The transcripts from the Agent’s call history can be used to grant scores to Agents when launching this feature, leading to an immediate kick-start and high adoption from the time of launch.
+- Agent Routing - This should be the final feather to the hat, and enable teams with effective routing and study change in average team metrics such as AHT, CSAT and total engaged calls. Work closely with CX teams to define the Routing logic. In the long term, CX teams should build their own routing logic through a `WYSIWYG editor`
+- Yara Voice Assistant - The speech-to-text integration with Yara can be launched as a control-group study where live calls are monitored by CX agents. Agents can perform a human takeover and chat with the customer if they deem the VA unable to address the queries of the customer with adequate confidence. Once adequate confidence is established, a global rollout can be planned.
+
+## 5.3 Metrics and tracking
+
+- Success for the `Category Wizard` feature can be determined by:
+    - Learning from Agent engagement at various rankings
+    - Studying for a positive correlation for average CSAT and AHT for calls handled by 1-star, 2-star and 3-star rated Agents in their category
+
+> 💡 In the future, we can plan for an achievements dashboard, where Agents can share their achievements and engage with one another
+
+
+- Success for `Agent Routing` can be determined by:
+    - Studying the wait time of callers
+- Success for the `Yara Voice Assistant` feature can be determined by:
+    - Studying the CSAT of calls handled by VA
+    - Keeping an eye on the number of call drops within the VA pipeline
+    - Direct feedback from customers to Agents about their VA experience
+    - Studying the correlation between CSAT of calls handled by VA and CSAT of calls handled by Agents
+    - Calls handled by Agents
+    
+    ---

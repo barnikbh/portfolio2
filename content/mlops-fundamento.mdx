@@ -1,0 +1,18 @@
+---
+title: "Building MLOps at Fundamento"
+publishedAt: "2025-02-13"
+summary: "Created MLOps for STT model training"
+---
+![Image](/blog-2.jpeg)
+
+Balancing innovation with reliability is a key challenge, especially when working with enterprise customers who demand cutting-edge features and system stability. To achieve this balance, it's essential to ensure that any new feature or enhancement is thoroughly tested and integrated without disrupting the existing system’s performance or reliability.
+
+At Fundamento, I faced this challenge while working on the Speech to Text (STT) model used in our Voice Agent platform. We wanted to improve the accuracy of the models, but selecting and testing a new model without affecting the existing customer experience was crucial. To manage this, we needed a solution that would allow us to innovate without compromising system stability.
+
+I worked with the team to develop AI Labs, an environment where we could test new ideas and hypotheses in parallel with the production system. The key was to create an isolated testing space where we could trial new models and features without interrupting the customer experience.
+
+For the STT model, we introduced a data tagging interface. This interface transcribed customer speech twice—once using the existing production system and once using the new model we were testing. Both transcriptions were stored, and annotators could compare the results to identify any differences in accuracy.
+
+Through this approach, we were able to iterate on the model without impacting the live system. Once we achieved sufficient accuracy and confidence in the new model, we quietly upgraded the production system, ensuring the transition was seamless and had no impact on customer experience.
+
+This process allowed us to continuously innovate and improve the system while maintaining stability

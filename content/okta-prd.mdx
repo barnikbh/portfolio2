@@ -1,0 +1,175 @@
+---
+title: "Okta Integration"
+publishedAt: "2024-12-26"
+summary: "Integrating Okta on Fundamento"
+---
+
+![Image](/okta-banner.png)
+# 1. Business Impact
+
+## 1.1 Summary
+
+Currently, Fundamento users log in through email and password. Enterprise customers often manage access control and user provisioning through Single Sign-On (SSO). This project will enable SSO integration with Okta, aligning with enterprise security requirements and streamlining user access management.
+
+## 1.2 Customer Usecase
+
+Customer: IIFL
+
+Business Head: Madhuri Patel
+
+Infosec Lead: Dharmender Narang
+
+Company Admin: Rakesh Agarwal
+
+Madhuri Patel, the Business Head, has conducted a successful 6-month POC with Fundamento. Her team is highly impressed with the product and sees its potential to digitize their customer center using Fundamento’s voice bot. As a next step, Madhuri plans to onboard a team of 50 customer support executives to monitor and audit interactions between the voice bot and customers. These executives will also train the voice bot to improve its performance incrementally. Additionally, 5 supervisors will oversee the training processes and performance of the executives via the app.
+
+However, a key bottleneck for initiating the project is compliance with IIFL’s infosec regulations. Dharmender Narang, the Infosec Lead, has outlined the following requirements for Fundamento to proceed:
+
+1. Integration with Okta’s SSO:
+    - Fundamento must support user provisioning through Okta, which is the organization-wide standard for access control.
+    - The integration should allow seamless single sign-on (SSO) for all authorized users within IIFL’s domain.
+2. Domain-Based Access Control:
+    - Access to IIFL’s company data on Fundamento must be restricted to users with email IDs under the iifl.com domain.
+    - External users or unauthorized domains must be explicitly blocked from accessing any company data.
+3. Role-Based Access Management:
+    - Okta must allow granular role-based access controls to define distinct permissions for executives and supervisors.
+    - Supervisors should have elevated privileges to audit training data and monitor team performance while executives are limited to their operational scope.
+4. Audit and Compliance Logs:
+    - The system should ensure compatibility with Okta’s logging and monitoring capabilities for auditing login activity and access changes.
+    - Logs must be stored securely and made available to IIFL’s compliance team for regular review.
+5. Session Management:
+    - Fundamento should enforce session expiration and re-authentication policies as per IIFL’s security guidelines.
+
+# 2. User Story
+
+## 2.1 User Roles v2
+
+- **Admin**: Full access to all features, including call logs, audit logs, training logs, and admin functions.
+- **Executives**:
+    - **Assigned**: Invited by an admin, with access to audit logs and basic features.
+    - **Unassigned**: Signed in from an email with iifl.com domain but requires admin invitation for access.
+    - **Deleted**: Retained status for maintaining an audit trail; the user cannot sign in.
+- **Supervisors**:
+    - **Assigned**: Elevated privileges to view advanced features, call logs, and training logs.
+    - **Deleted**: Retained status for maintaining an audit trail; the user cannot sign in.
+
+## 2.2 Configuring Single Sign-On with Okta
+
+![Image](/prd-1-1.png)
+
+- Navigate to **Settings > Security > SSO**.
+- View a quick link to the Okta help doc.
+- Sign in to Okta and create an app for Fundamento.
+- Copy the domain, client ID, and client secret from Okta.
+- Paste the information into Fundamento’s SSO setup page.
+- Copy the redirect URL from Fundamento and paste it into the Okta app settings.
+- Save the configuration.
+
+## 2.3 Additional Security Settings
+
+![Image](/prd-1-2.png)
+
+- Admins can configure auto sign-out policies in **Settings > Security**.
+- Once SSO is enabled, admins can restrict login via email and password.
+
+## 2.4 User Login
+
+![Image](/prd-1-3.png)
+
+![Image](/prd-1-4.png)
+
+| Login Scenario | Admin | Non-Admin |
+| --- | --- | --- |
+| SSO not configured | Password login & reset enabled | Password login & reset enabled |
+| SSO configured (password ON) | Login via SSO or password; reset enabled | Login via SSO or password; reset enabled |
+| SSO configured (password OFF) | Login via SSO only | Login via SSO only |
+
+## 2.5 Audit Logs v2
+
+The following events will be logged in the database:
+
+- Authentication events
+- Password last updated
+- User session start time
+- User session end time
+- User session active status
+
+(Note: Frontend updates are not required at this time.)
+
+# 3. Requirements
+
+## 3.1 Functional
+
+- Implement Okta SSO integration for login and provisioning.
+- Restrict user access based on email domain.
+- Introduce role-based permissions and functionalities for Admins, Executives, and Supervisors.
+- Enable detailed logging of authentication and session activities, including login attempts, successful authentications, failed authentications, password changes, session creations, and session terminations.
+- Allow admins to configure security settings like auto sign-out and password login restrictions.
+- Implement a function to force logout users, allowing admins to remotely terminate active sessions when necessary.
+- Implement auto sign-out based on the last activity.
+- Add users automatically based on email domain.
+- Implement Projects as a resource within the organisation
+- Implement access control on Projects.
+
+## 3.2 Non-functional
+
+- Ensure development with a future multi-tenant deployment in mind.
+- Ensure support for OIDC Back-Channel Logout
+- Deliver high availability for SSO functionality with 99.9% uptime.
+- Optimise for minimal latency during authentication.
+
+## 3.3 Edge cases
+
+- **Edge Case 1**: Customer is logged out while on the Integration page. Ensure redirection to the Integrations tab upon login: https://okta.com/signin?next=www.iifl.fundamento.ai/integration.
+- **Edge Case 2**: User session expires mid-operation. Prompt re-authentication and preserve unsaved changes. (v2)
+- **Edge Case 3**: Incomplete configuration of Okta SSO (e.g., missing client ID or redirect URL). Notify the admin with specific error messages to guide resolution.
+- **Edge Case 4**: Network interruptions during SSO authentication. Retry the authentication process or provide an error notification to the user.
+- **Edge Case 5**: Temporary unavailability of Okta services. Display a user-friendly message and provide alternate login options if applicable.
+- **Edge Case 6**: User attempts to log in from an unauthorized domain. Block access and display an error message indicating restricted domain policy.
+- **Edge Case 7**: Simultaneous logins from multiple devices for a single account. Enforce session management policies or notify the user.
+- **Edge Case 8**: Admin revokes access for a user currently logged in. Ensure the session is terminated immediately.
+- **Edge Case 9**: Multiple Admins login exist with the same domain. Implement domain capture for handling such scenarios. (v2)
+
+## 3.4 Open Questions
+
+- Edge Case 3: Can we create a “Test” button to test the configuration during setup?
+- Edge Case 9: How many Admin accounts currently exist in production with the same email domain? How would we reconcile these accounts?
+- 
+
+# 4. Success Criteria
+
+The success of this feature will be measured by:
+
+1. Seamless integration of Okta SSO, verified by successful logins from users with valid iifl.com credentials.
+2. Admin’s ability to configure and enforce SSO settings from the application.
+3. Secure restriction of company data to authorized users only.
+4. Comprehensive audit logs capturing all relevant authentication events.
+5. Positive feedback from IIFL’s stakeholders during user acceptance testing.
+
+# 5. Release Goals
+
+![Image](/prd-1-5.png)
+
+End of week 1:
+
+- Define new user roles and provisioning in the backend
+- Complete development of SSO v1 on the frontend and backend
+- Handle critical edge cases
+- Test the SSO v1 end-to-end along with the backend of auto logout and forced logout
+- (Aim for) Complete the Auto logout and forced logout on the backend
+
+End of week 2:
+
+- Complete Auto logout and forced logout feature on the backend & frontend
+- Ship SSO v1 along with new roles, logs & auto & forced logout on IIFL and start UAT
+- (Aim for) Close edge cases & Bug fixes
+
+End of Week 3:
+
+- Close edge cases & Bug fixes
+- Complete UAT
+
+End of Week 4:
+
+- (Aim for) Global release
+- (Aim for) SSO v2 (Google-SAML)

@@ -1,0 +1,143 @@
+---
+title: "ShareFile"
+publishedAt: "2023-06-29"
+summary: "Voice Gateway"
+---
+
+![Image](/sharefile.jpg)
+---
+
+# 1 Summary
+
+## 1.1 Business Overview
+
+ShareFile’s objective is to be the industry leader in secured data sharing and collaboration in the legal and accounting industry.
+
+## 1.2 Executive Goals
+
+> Our goal is to grow the business by increasing the value we are able to provide to our existing customers in accounting and legal - and in turn sign new accounts by positioning ShareFile as the go-to tool for professionals in these areas. We are targetting to increase our ARR by 35% over the next 12 months - Caroline (Director of Product) 
+
+> We’re trying to move away from being a task oriented software to a more share anything space. It’s the whole experience. The new Sharefile is all about helping people `work better in the new age of remote workspaces`. - Kurt (General Manager)
+
+## 1.3 Goal
+
+- Identify areas to growth for customers in Legal and Accounting
+- Position Sharefile as an industry leader in secure document collaboration
+- Grow ARR by 35%
+
+---
+
+# 2 Research
+
+## 2.1 Objective
+
+Identify areas to improve Sharefile by:
+- integrating ShareFile into the user’s identity
+- finding market gaps 
+- reducing offline redundancies
+
+## 2.2 User Stories
+
+### [Brooke](https://www.getapp.com/collaboration-software/a/sharefile/reviews/b0fbc8fad6/) (Manager at a Non Profit)
+> In today's virtual environment, where online collaboration is essential, I find ShareFile to be cumbersome to use. For collaborative files, our organisation turns to Google Drive (internal) and One Drive (for internal and external collaboration).
+
+ 
+
+### User Behavior:
+![Image](/prd-2-1.png)
+
+### Sharanya (Partner at a law firm)
+> I often assign a project to different associates and assign them different parts of the draft, depending on their experience. After writing the initial draft myself, I ask Tom to work on the citations since he’s a junior associate. And I ask Tanya who’s an experienced associate, to work on the clauses.
+
+
+#### Note 💡
+> Sharanya delegates work to her teammates. Her colleagues work on different parts of the case file. Once her colleagues complete their tasks, she likes to merge all the meaning changes into one master document, which she then reviews, and sends over to the client.
+
+
+## 2.3 User Research
+
+- what percentage of the user base are legal firms
+- number of users per org
+- average time spent by users from the org
+
+
+### 2.3.1 User Journey: Sharanya (Partner at a law firm)
+
+![Image](/prd-2-2.png)
+
+- When delegating work within her team, she shares copies of the `primary document` as `duplicate files`
+    - Her team share the updated `duplicate files`, along with the highlighted changes
+    - She manually goes through the changes in the submitted `duplicate files` and updates the `primary document` in her system
+- When delegating work outside her team, she shares a portion of the `primary document` as a `fragmented file`
+    - She wants to maintain the anonymity of the client and auto-replaces the client's name and other compromising information with placeholders
+    - Upon receiving the `fragmented file`, she copies the relevant changes and updates the `primary document`
+- For certain clauses and citations, she may refer to an `old document` from a previous project
+    - Here she might find relevant clauses, and copy them onto the `primary document`
+
+### 2.3.2 Security Risks
+
+- Her team might mis-highlight some of the text in the `duplicate files`, resulting in incorrect updates on the `primary document`
+
+- The Partner might leave certain compromising information on the `fragmented file` resulting in a security breach 
+
+- While copying a clause or citation from the `old document`, the partner might forget to replace some compromising information, resulting in a security breach
+
+## 2.4 Market Research
+
+- No direct solution found
+
+## 2.5 Opportunities
+
+- Label Declaration - This feature allows the user to declare certain words as labels, which are retained as a property of the `primary document`. When a text from the `primary document` is copied outside of the document, the secure information is replaced by placeholders. The user can manage all the labels for a document from a central interface called - Label Index, and update them, resulting in the changes reflecting in the entire document.
+- Instance Generator - This feature enables users to create `fragmented files` as well `duplicate files` from the `primary document`. The user can choose to publish or not publish the label values in the new file instances.
+- Version Control Pro - This feature allows the auto-merging of a `duplicate file` with a `primary document`. The content of the files is compared in a side-by-side view, and the user can view the changes highlighted by the system as `added`, `removed` or `updated`, and systematically accept or reject a change.
+
+![Image](/prd-2-3.jpg)
+
+
+---
+
+# 3 Product Requirement - Label Declaration
+
+## 3.1 User Experience
+
+Reference: [Custom solution with Python plugin on OneDrive](https://www.youtube.com/watch?v=xpvcCdfFtSE)
+
+- Create Label
+    - Users can highlight a text and mark it as a new label through an easy-to-use interface
+    - The user should be able to name the label
+- Mark Label
+    - The user should be able to highlight a text and mark it as a label from an existing list of labels
+    - The user should be able to convert all similar instances of a selected text, within to document, as label instances
+    - User should have access to a dedicated character for label assignment while typing along with drop-down and auto-complete (example `{{`)
+- Manage Label values within a Document
+    - The user should be able to change label values from a dedicated interface
+    - The user should be able to hide/show label values in the document
+- Label access control
+    - Users should be able to define how users in different access levels see label values
+    For example, users viewing a document without logging in see the values redacted
+
+
+#### 🔭 👇🏼 Consider these FUTURE updates
+> - Apply labels at a folder level OR organisation level
+>     - Global label vs local label
+> - Re-using documents as templates
+
+
+
+#### 🚧 Technical discoveries REQUIRED
+> - Identity and Access Management schema required
+>     - Access control
+>     - Storage
+> - Data consistency and availability definitions
+
+
+## 3.2 Tracking Metrics
+
+- Label engagement (feature success)
+- Change in average session time (north star)
+- User feedback - control group study
+
+
+#### 💡 Next steps:
+> Wireframing, followed by discovery with Engineering.
