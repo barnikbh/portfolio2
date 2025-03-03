@@ -288,7 +288,7 @@ export const DATA = {
         {
         title: "Award",
         icon: <Icons.globe className="h-4 w-4" />,
-        href: "https://devpost.com/software/my6footprint",
+        href: "https://myportfolio-barnik-bhattacharyya.s3.eu-north-1.amazonaws.com/files/1583822070491.jpeg",
       },],
     },
   ],
