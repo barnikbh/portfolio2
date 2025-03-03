@@ -41,11 +41,11 @@ export const DATA = {
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "https://medium.com/@barnikbh", icon: NotebookIcon, label: "Blog", },
   ],
   contact: {
-    email: "hello@example.com",
-    tel: "+123456789",
+    email: "barnikbh@gmail.com",
+    tel: "+919051846061",
     social: {
       GitHub: {
         name: "GitHub",
@@ -161,20 +161,16 @@ export const DATA = {
   projects: [
     {
       title: "Okta Integration",
-      href: "/blog/okta-prd",
+      href: "/work/okta-prd",
       dates: "Nov 2024 - Jan 2025",
       active: true,
       description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
+        "Enterprise customers often manage access control and user provisioning through Single Sign-On (SSO). This project will enable SSO integration with Okta, aligning with enterprise security requirements and streamlining user access management.",
       technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
+        "Enterprise Security",
+        "Identity & Access Management",
+        "Single Sign-on",
+        "CCaaS",
       ],
       links: [
         {
@@ -188,101 +184,57 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Giskard AI Scanner",
-      href: "https://magicui.design",
-      dates: "June 2023 - Present",
+      title: "Scaling Sharefile",
+      href: "/work/sharefile-prd",
+      dates: "June 2023",
       active: true,
       description:
-        "Designed, developed and sold animated UI components for developers.",
+        "Identify areas to improve Sharefile by integrating ShareFile into the user’s identity, finding market gaps and reducing offline redundancies for users.",
       technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
+        "File Sharing",
+        "Security",
+        "B2B SaaS",
       ],
       links: [
         {
-          type: "Website",
-          href: "https://magicui.design",
+          type: "PRD",
+          href: "/work/sharefile-prd",
           icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
-          icon: <Icons.github className="size-3" />,
         },
       ],
       image: 
-        "/giskard.jpg",
+        "/sharefile.jpg",
       video: "",
     },
     {
-      title: "llm.report",
-      href: "https://llm.report",
-      dates: "April 2023 - September 2023",
+      title: "Contact Center AI PMF",
+      href: "/work/ccai-pmf-prd",
+      dates: "September 2023",
       active: true,
       description:
-        "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
+        "Build the product market fit journey of Fundamento's CCaaS platform through market research and rapid experimentation with the focus of reducing AHT of enterprise contact centers.",
       technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
+        "CCaaS",
+        "Agent Handoff",
+        "Agent Collaboration",
+        "Artificial Intelligence",
+        "Gen AI",
+        "Speech-to-text",
+        "Text-to-speech",
+        "Research",
       ],
       links: [
         {
-          type: "Website",
-          href: "https://llm.report",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/dillionverma/llm.report",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: 
-        "/booking.png",
-      video: "",
-    },
-    {
-      title: "CoinCrowd's Social Media Strategy",
-      href: "https://automatic.chat",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://automatic.chat",
+          type: "Document",
+          href: "/work/ccai-pmf-prd",
           icon: <Icons.globe className="size-3" />,
         },
       ],
       image: 
-        "/crypto.webp",
+        "/yara.avif",
       video: "",
     },
+
   ],
   hackathons: [
     {
