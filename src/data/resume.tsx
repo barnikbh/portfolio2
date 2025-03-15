@@ -160,6 +160,32 @@ export const DATA = {
   ],
   projects: [
     {
+      title: "No-Code AI Workflow Agents",
+      href: "https://medium.com/@barnikbh/building-no-code-ai-workflow-agents-from-experiment-to-scalable-product-901e1d2bba39",
+      dates: "Apr 2024 - Jan 2025",
+      active: true,
+      description:
+        "We designed a three-party-architecture that could balance flexibility, scalability and control.",
+      technologies: [
+        "CCaaS",
+        "LLM",
+        "System Design",
+        "No Code AI",
+        "AI Workflow",
+        "AI Agent",
+      ],
+      links: [
+        {
+          type: "Read Blog",
+          href: "https://medium.com/@barnikbh/building-no-code-ai-workflow-agents-from-experiment-to-scalable-product-901e1d2bba39",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: 
+        "/blog-1.webp",
+      video: "",
+    },
+    {
       title: "Okta Integration",
       href: "/work/okta-prd",
       dates: "Nov 2024 - Jan 2025",
@@ -174,7 +200,7 @@ export const DATA = {
       ],
       links: [
         {
-          type: "PRD",
+          type: "Read PRD",
           href: "/work/okta-prd",
           icon: <Icons.globe className="size-3" />,
         },
@@ -184,35 +210,39 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Scaling Sharefile",
-      href: "/work/sharefile-prd",
-      dates: "June 2023",
+      title: "Building Voice Gateway Infrastructure",
+      href: "https://medium.com/@barnikbh/from-six-seconds-to-seamless-how-we-rebuilt-our-ai-voice-agent-from-the-ground-up-b3b3ca275102",
+      dates: "Apr 2024 - Jan 2025",
       active: true,
       description:
-        "Identify areas to improve Sharefile by integrating ShareFile into the user’s identity, finding market gaps and reducing offline redundancies for users.",
+        "We took matters into our own hand to reduce latency from 6 seconds to 400 miliseconds. We built our own in-house Voice Gateway infrastructure",
       technologies: [
-        "File Sharing",
-        "Security",
-        "B2B SaaS",
+        "CCaaS",
+        "Speech-to-text",
+        "Text-to-speech",
+        "System Design",
+        "Orchestrator",
+        "VoIP",
+        "WebRTC",
       ],
       links: [
         {
-          type: "PRD",
-          href: "/work/sharefile-prd",
+          type: "Read Blog",
+          href: "https://medium.com/@barnikbh/from-six-seconds-to-seamless-how-we-rebuilt-our-ai-voice-agent-from-the-ground-up-b3b3ca275102",
           icon: <Icons.globe className="size-3" />,
         },
       ],
       image: 
-        "/sharefile.jpg",
+        "/blog-2.webp",
       video: "",
     },
     {
-      title: "Contact Center AI PMF",
+      title: "Achieving PMF for Contact Center AI",
       href: "/work/ccai-pmf-prd",
-      dates: "September 2023",
+      dates: "Oct 2023 - Feb 2024",
       active: true,
       description:
-        "Build the product market fit journey of Fundamento's CCaaS platform through market research and rapid experimentation with the focus of reducing AHT of enterprise contact centers.",
+        "Built the product market fit strategy of Fundamento's CCaaS platform by relying on market research and experimentation, with a goal to reduce AHT of enterprise contact centers.",
       technologies: [
         "CCaaS",
         "Agent Handoff",
@@ -225,13 +255,36 @@ export const DATA = {
       ],
       links: [
         {
-          type: "Document",
+          type: "Read Research",
           href: "/work/ccai-pmf-prd",
           icon: <Icons.globe className="size-3" />,
         },
       ],
       image: 
         "/yara.avif",
+      video: "",
+    },
+    {
+      title: "Scaling Sharefile",
+      href: "/work/sharefile-prd",
+      dates: "Jun 2023",
+      active: true,
+      description:
+        "Identify areas to improve Sharefile by integrating ShareFile into the user’s identity, finding market gaps and reducing offline redundancies for users.",
+      technologies: [
+        "File Sharing",
+        "Security",
+        "B2B SaaS",
+      ],
+      links: [
+        {
+          type: "Read Research",
+          href: "/work/sharefile-prd",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: 
+        "/sharefile.jpg",
       video: "",
     },
 
