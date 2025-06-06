@@ -80,6 +80,18 @@ export const DATA = {
 
   work: [
     {
+      company: "LiaPlus AI",
+      href: "https://liaplus.com/",
+      badges: [],
+      location: "New Delhi, India",
+      title: "Product Advisor",
+      logoUrl: "/liaplus_logo.jpeg",
+      start: "May 2025",
+      end: "Present",
+      description:
+        "Advising the engineering team on building a platform product strategy, and helping founders with driving go-to-market, pricing, and architecture conversations with customers.",  
+    },
+    {
       company: "Fundamento",
       href: "https://www.fundamento.ai/",
       badges: [],
@@ -87,9 +99,9 @@ export const DATA = {
       title: "Senior Product Manager",
       logoUrl: "/fundamento.jpeg",
       start: "October 2023",
-      end: "Present",
+      end: "March 2025",
       description:
-        "Built Contact Center AI from 0 to 1 and scaled it to a million monthly conversations within 12 months. Worked with Vector Databases and LLMs to built Retrieval-Augmented Generation (RAG) and no code AI Workflows. Launched developer toolkits, connectors, webhooks and APIs to make go-to-market lighting fast! Led Enterprise readiness by making security a pariority, while prioritizing an infrastructure that's ready for on-prem deplyoment.",  
+        "Built Voice Contact Center AI from 0 to 1, scaled it to more than 12 enterprises, reaching $1.5 million in ARR, and 5 million monthly conversations. Built two product suits, inbound & outbound Agents, which reduced customer cost by 50% anually.",  
     },
     {
       company: "CoinCrowd",
@@ -101,7 +113,7 @@ export const DATA = {
       start: "July 2023",
       end: "December 2023",
       description:
-        "Advised the founders to create the roadmap for the Data team. Worked with Marketing to set up data pipelines for more informed campaigns with better results and cost savings.",
+        "Advised the founders on creating the product strategy for the Data integrations team. Worked with Marketing to set up data pipelines and strategies to drive data-driven campaigns.",
     },
     {
       company: "Zenlaw",
@@ -113,7 +125,7 @@ export const DATA = {
       start: "October 2021",
       end: "February 2023",
       description:
-        "Created an MLOps platform for Data Scientists to train and exeriment with discriminative AI language models. Created high availability data pipelines for annotation and rapid consumption in model training. Built advanced dashboards to encourage AI explainability and make MLOPs faster and higher average F1 scores.",
+        "Invented and scaled an internal MLOps platform that streamlined model development workflows for Data Scientists and Annotators, reducing iteration time by 400% and simplifying the path to production for discriminative AI language models.",
     },
     {
       company: "Viafone",
@@ -125,7 +137,7 @@ export const DATA = {
       start: "October 2019",
       end: "March 2021",
       description:
-        "Led horizontal scaling of Contact Center AI platform (CCaaS). Designed and led features to streamline payments and security. Migrated a legacy platform to the cloud. Built agent collaboration features in the CCaaS platform. Led GTM for more than 15 enterprises in the EMEA.",
+        "Led horizontal scaling of CCaaS Chatbot platform. Horizontally scaled the product stack by building payments and loyalty solutions, creating new ARR of $1.1 million.",
     },
     {
       company: "Engati",
@@ -137,7 +149,7 @@ export const DATA = {
       start: "February 2019",
       end: "September 2019",
       description:
-        "Reported to the Chief Product Officer at Engati. Managed the feature improvement roadmap. Worked on product documentation in order make the product self-serve.",
+        "Reported to the Chief Product Officer at Engati, learned product management.",
     },
   ],
   education: [
