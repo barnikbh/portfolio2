@@ -11,7 +11,7 @@ export const DATA = {
     "At work, I'm an engineer turned PM. At play I'm a scuba diver.",
   summary:
    "I grew up watching my dad design computers, which ignited a lifelong passion for understanding and building software. That curiosity led me to [engineering](/#education), [hackathons](/#hackathons), and the thrill of building impactful software at incredible [early-stage B2B SaaS startups](/#work).",
-  avatarUrl: "/me.jpg",
+  avatarUrl: "/me_2026.jpeg",
   skills: [
     "Python",
     "Javascript",
