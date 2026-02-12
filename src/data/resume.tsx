@@ -80,6 +80,18 @@ export const DATA = {
 
   work: [
     {
+      company: "Omnissa",
+      href: "https://www.omnissa.com/",
+      badges: [],
+      location: "Bengaluru, India",
+      title: "Product Manager",
+      logoUrl: "/omnissa.jpeg",
+      start: "August 2025",
+      end: "Present",
+      description:
+        "Building the future of autonomous workspace by building AI across DEX, UEM & Horizon.",  
+    },
+    {
       company: "LiaPlus AI",
       href: "https://liaplus.com/",
       badges: [],
@@ -87,7 +99,7 @@ export const DATA = {
       title: "Product Advisor",
       logoUrl: "/liaplus_logo.jpeg",
       start: "May 2025",
-      end: "Present",
+      end: "August 2025",
       description:
         "Advising the engineering team on building a platform product strategy, and helping founders with driving go-to-market, pricing, and architecture conversations with customers.",  
     },
